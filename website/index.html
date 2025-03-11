@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity 2025 - Technical & Cultural Fest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="tech-grid"></div>
+    <div class="tech-pattern"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar glass-effect">
+        <div class="logo">
+            <h1>Infinity</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="technical.html"><i class="fas fa-code"></i> Technical</a></li>
+            <li><a href="cultural.html"><i class="fas fa-music"></i> Cultural</a></li>
+            <li><a href="#register"><i class="fas fa-user-plus"></i> Register</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="banner-container">
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
+                <h2>Infinity 2025</h2>
+                <p>Experience the convergence of technology and creativity at South India's premier technical and cultural festival. Join us for two days of innovation, competition, and celebration.</p>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="content-wrapper">
+                <div class="hero-title">
+                    <h1>Where Innovation Meets Culture</h1>
+                    <div class="tagline-wrapper">
+                        <div class="dynamic-taglines">
+                            <span class="tag active">Code. Create. Conquer.</span>
+                            <span class="tag">Innovate. Inspire. Impact.</span>
+                            <span class="tag">Design. Develop. Deploy.</span>
+                            <span class="tag">March 26-27, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="number">10+</span>
+                        <span class="label">Events</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">₹1L+</span>
+                        <span class="label">Prize Pool</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">1000+</span>
+                        <span class="label">Participants</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#register" class="cta-button">
+                        <span>Register Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#events" class="cta-button secondary">
+                        <span>Explore Events</span>
+                        <i class="fas fa-compass"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2 class="text-gradient">Our Events</h2>
+            <div class="event-categories">
+                <div class="category-preview">
+                    <h3><i class="fas fa-laptop-code"></i> Technical Events</h3>
+                    <p>Showcase your technical skills through coding, debugging, and innovation challenges.</p>
+                    <a href="technical.html" class="cta-button">View Events <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category-preview">
+                    <h3><i class="fas fa-theater-masks"></i> Cultural Events</h3>
+                    <p>Express your creativity through music, dance, photography, and more.</p>
+                    <a href="cultural.html" class="cta-button">View Events <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="register" class="register">
+        <div class="container">
+            <h2 class="text-gradient">Register for Events</h2>
+            <form id="registration-form" class="registration-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" required placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <select id="event-select" name="event" required>
+                        <option value="">Select Event</option>
+                        <optgroup label="Technical Events">
+                            <option value="pitch4sustain">PITCH4SUSTAIN - ₹500</option>
+                            <option value="ctrlz">CTRL+Z - ₹200</option>
+                            <option value="syntax-scramble">Syntax Scramble - ₹150</option>
+                            <option value="phantom-hunt">Phantom Hunt - ₹500</option>
+                        </optgroup>
+                        <optgroup label="Cultural Events">
+                            <option value="jam">Just A Minute (JAM) - ₹199</option>
+                            <option value="wave-your-story">Wave Your Story - ₹299</option>
+                            <option value="echoes-solo">Echoes & Strings (Solo) - ₹299</option>
+                            <option value="echoes-duet">Echoes & Strings (Duet) - ₹399</option>
+                            <option value="resonance">Resonance (Group) - ₹699</option>
+                            <option value="cosmic-drift">Cosmic Drift - ₹2500</option>
+                            <option value="capture-mobile">Capture the Moment (Mobile) - ₹100</option>
+                            <option value="capture-dslr">Capture the Moment (DSLR) - ₹150</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Register Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> infinity2025@college.edu</p>
+                    <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

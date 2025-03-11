@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Infinity 2025</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000000;
+            font-family: 'Inter', sans-serif;
+        }
+        .loader {
+            text-align: center;
+            color: #fc4aff;
+        }
+        .loader h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(74, 158, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #ff4af9;
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+            box-shadow: 0 0 15px rgba(74, 158, 255, 0.2);
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <h1>Infinity 2025</h1>
+        <div class="spinner"></div>
+        <p>Redirecting to the event website...</p>
+    </div>
+    <script>
+        // Redirect to the main website after a short delay
+        setTimeout(() => {
+            window.location.href = 'website/index.html';
+        }, 1500);
+    </script>
+</body>
+</html> 
