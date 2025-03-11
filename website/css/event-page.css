@@ -1,0 +1,430 @@
+/* Event Page Base Styles */
+.event-page {
+    background: var(--bg-darker);
+    min-height: 100vh;
+}
+
+/* Event Hero Section */
+.event-hero {
+    min-height: 60vh;
+    position: relative;
+    padding: 120px 2rem 4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Event-specific backgrounds */
+.pitch4sustain .event-hero {
+    background: linear-gradient(135deg, #001F3F 0%, #003366 100%);
+}
+
+.ctrlz .event-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.syntax-scramble .event-hero {
+    background: linear-gradient(135deg, #240b36 0%, #1a1a2e 100%);
+}
+
+.phantom-hunt .event-hero {
+    background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+}
+
+/* Event Background Patterns */
+.event-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.pitch4sustain .event-bg-pattern {
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+    animation: patternFloat 20s infinite alternate ease-in-out;
+}
+
+/* Event Floating Elements */
+.event-floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.event-floating-elements .floating-element {
+    position: absolute;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.1);
+    animation: float 20s infinite linear;
+}
+
+.event-floating-elements .lightbulb {
+    top: 20%;
+    left: 10%;
+    animation: floatAndGlow 8s infinite alternate ease-in-out;
+}
+
+.event-floating-elements .chart {
+    top: 30%;
+    right: 15%;
+    animation: floatAndRotate 12s infinite alternate ease-in-out;
+}
+
+.event-floating-elements .sustainability {
+    bottom: 25%;
+    left: 20%;
+    animation: floatAndPulse 10s infinite alternate ease-in-out;
+}
+
+/* Event Hero Content */
+.event-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    padding: 3rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.2);
+}
+
+.event-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.event-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.event-quick-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-primary);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* Event Details Section */
+.event-details {
+    padding: 6rem 2rem;
+    position: relative;
+    background: var(--bg-darker);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.detail-card {
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+}
+
+.detail-card h2 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.detail-card h2 i {
+    color: var(--secondary-color);
+}
+
+/* Problem Statements */
+.problem-statements {
+    list-style: none;
+    padding: 0;
+}
+
+.problem-statements li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: rgba(14, 165, 233, 0.05);
+    transition: all 0.3s ease;
+}
+
+.problem-statements li:hover {
+    transform: translateX(10px);
+    background: rgba(14, 165, 233, 0.1);
+}
+
+.problem-statements li i {
+    color: var(--secondary-color);
+}
+
+/* Timeline */
+.format-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--glass-border);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -2.25rem;
+    top: 0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--secondary-color);
+}
+
+.timeline-item .time {
+    font-family: 'Space Mono', monospace;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item .description {
+    color: var(--text-secondary);
+}
+
+/* Guidelines */
+.guidelines {
+    list-style: none;
+    padding: 0;
+}
+
+.guidelines li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.guidelines li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* Prizes */
+.prizes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.prize-item {
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: rgba(14, 165, 233, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.prize-item i {
+    font-size: 2rem;
+}
+
+.prize-item.first i { color: gold; }
+.prize-item.second i { color: silver; }
+.prize-item.third i { color: #cd7f32; }
+
+.prize-item .position {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.prize-item .amount {
+    color: var(--secondary-color);
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25rem;
+}
+
+/* Registration CTA */
+.registration-cta {
+    text-align: center;
+    padding: 3rem;
+    border-radius: 24px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+}
+
+.registration-cta h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.registration-cta p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.registration-fee {
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+    font-family: 'Space Mono', monospace;
+}
+
+/* Animations */
+@keyframes floatAndGlow {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.2;
+    }
+}
+
+@keyframes floatAndRotate {
+    0%, 100% {
+        transform: translate(0) rotate(0deg);
+    }
+    50% {
+        transform: translate(-15px, -10px) rotate(180deg);
+    }
+}
+
+@keyframes floatAndPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.2;
+    }
+}
+
+@keyframes patternFloat {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-hero {
+        padding: 100px 1rem 3rem;
+    }
+
+    .event-hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .event-title {
+        font-size: 2.5rem;
+    }
+
+    .event-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .event-quick-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prizes {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-cta {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-title {
+        font-size: 2rem;
+    }
+
+    .event-subtitle {
+        font-size: 1rem;
+    }
+
+    .detail-card {
+        padding: 1.5rem;
+    }
+
+    .event-floating-elements .floating-element {
+        font-size: 2rem;
+    }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .event-floating-elements .floating-element,
+    .problem-statements li,
+    .event-bg-pattern {
+        animation: none;
+        transition: none;
+    }
+} 
