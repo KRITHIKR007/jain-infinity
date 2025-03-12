@@ -74,146 +74,6 @@ function activeNavOnScroll() {
 
 window.addEventListener('scroll', activeNavOnScroll);
 
-// Form Submission Handler
-const registrationForm = document.getElementById('registration-form');
-
-if (registrationForm) {
-    registrationForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Get form data
-        const formData = new FormData(registrationForm);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            // Validate form data
-            if (!validateForm(data)) {
-                return;
-            }
-
-            // Show loading state
-            const submitBtn = registrationForm.querySelector('.submit-btn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnIcon = submitBtn.querySelector('i');
-            const originalBtnText = btnText.textContent;
-            
-            submitBtn.disabled = true;
-            btnText.textContent = 'Submitting...';
-            btnIcon.className = 'loading';
-
-            // Simulate API call (replace with actual API endpoint)
-            await new Promise(resolve => setTimeout(resolve, 1500));
-
-            // Show success message
-            showNotification('Registration successful! We will contact you soon.', 'success');
-            registrationForm.reset();
-
-            // Reset button
-            submitBtn.disabled = false;
-            btnText.textContent = originalBtnText;
-            btnIcon.className = 'fas fa-arrow-right';
-
-        } catch (error) {
-            console.error('Registration failed:', error);
-            showNotification('Registration failed. Please try again later.', 'error');
-            
-            // Reset button on error
-            const submitBtn = registrationForm.querySelector('.submit-btn');
-            if (submitBtn) {
-                const btnText = submitBtn.querySelector('.btn-text');
-                const btnIcon = submitBtn.querySelector('i');
-                
-                if (btnText && btnIcon) {
-                    submitBtn.disabled = false;
-                    btnText.textContent = 'Register Now';
-                    btnIcon.className = 'fas fa-arrow-right';
-                }
-            }
-        }
-    });
-}
-
-// Form Validation
-function validateForm(data) {
-    const fields = {
-        name: {
-            value: data.name,
-            rules: {
-                required: true,
-                minLength: 2
-            },
-            messages: {
-                required: 'Please enter your name',
-                minLength: 'Name must be at least 2 characters long'
-            }
-        },
-        email: {
-            value: data.email,
-            rules: {
-                required: true,
-                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-            },
-            messages: {
-                required: 'Please enter your email address',
-                pattern: 'Please enter a valid email address'
-            }
-        },
-        phone: {
-            value: data.phone,
-            rules: {
-                required: true,
-                pattern: /^\d{10}$/
-            },
-            messages: {
-                required: 'Please enter your phone number',
-                pattern: 'Please enter a valid 10-digit phone number'
-            }
-        },
-        event: {
-            value: data.event,
-            rules: {
-                required: true
-            },
-            messages: {
-                required: 'Please select an event'
-            }
-        }
-    };
-
-    for (const [fieldName, field] of Object.entries(fields)) {
-        const input = document.getElementById(fieldName);
-        
-        // Remove any existing error styles
-        input.style.borderColor = '';
-        
-        // Check required
-        if (field.rules.required && !field.value) {
-            showNotification(field.messages.required, 'error');
-            input.style.borderColor = 'var(--error-color)';
-            input.focus();
-            return false;
-        }
-
-        // Check minLength
-        if (field.rules.minLength && field.value.length < field.rules.minLength) {
-            showNotification(field.messages.minLength, 'error');
-            input.style.borderColor = 'var(--error-color)';
-            input.focus();
-            return false;
-        }
-
-        // Check pattern
-        if (field.rules.pattern && !field.rules.pattern.test(field.value)) {
-            showNotification(field.messages.pattern, 'error');
-            input.style.borderColor = 'var(--error-color)';
-            input.focus();
-            return false;
-        }
-    }
-
-    return true;
-}
-
 // Enhanced Notification System
 function showNotification(message, type) {
     // Remove any existing notifications
@@ -344,5 +204,30 @@ window.addEventListener('scroll', () => {
     if (pattern && hero) {
         pattern.style.transform = `translateY(${scrolled * 0.2}px)`;
         hero.style.backgroundPosition = `center ${scrolled * 0.3}px`;
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Handle dynamic taglines
+    const taglines = document.querySelectorAll('.dynamic-taglines .tag');
+    let currentTagline = 0;
+
+    if (taglines.length > 0) {
+        setInterval(() => {
+            taglines[currentTagline].classList.remove('active');
+            currentTagline = (currentTagline + 1) % taglines.length;
+            taglines[currentTagline].classList.add('active');
+        }, 3000);
     }
 });

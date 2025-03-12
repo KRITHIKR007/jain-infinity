@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting to Infinity 2025</title>
     <style>
+        /* Base body styling - centers content vertically and horizontally with dark gradient background */
         body {
             margin: 0;
             padding: 0;
@@ -17,6 +18,8 @@
             color: #ffffff;
             background: radial-gradient(circle at center, #111111, #050505);
         }
+        
+        /* Main loader container - styled as a glass-morphism card with subtle borders and shadows */
         .loader {
             text-align: center;
             max-width: 400px;
@@ -30,6 +33,7 @@
             overflow: hidden;
         }
         
+        /* Shine effect overlay - creates moving highlight across the loader card */
         .loader::before {
             content: '';
             position: absolute;
@@ -48,11 +52,13 @@
             pointer-events: none;
         }
         
+        /* Animation for shine effect - moves diagonal highlight across card */
         @keyframes shine {
             0% { transform: translateX(-150%) rotate(45deg); }
             100% { transform: translateX(150%) rotate(45deg); }
         }
         
+        /* Main heading style - gradient text with text shadow and positioning for "2025" badge */
         .loader h1 {
             font-size: 2.75rem;
             margin-bottom: 1.5rem;
@@ -65,6 +71,7 @@
             position: relative;
         }
         
+        /* "2025" superscript styling - smaller text positioned next to main heading with same gradient */
         .loader h1::after {
             content: '2025';
             font-size: 1rem;
@@ -77,12 +84,14 @@
             color: transparent;
         }
         
+        /* Paragraph styling - light colored text with increased size for readability */
         .loader p {
             color: #e2e8f0;
             font-size: 1.1rem;
             margin-bottom: 1.2rem;
         }
         
+        /* Loading spinner - circular animation with gradient border colors and glow effect */
         .spinner {
             width: 60px;
             height: 60px;
@@ -96,11 +105,13 @@
             box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
         }
         
+        /* Spinner rotation animation - rotates the spinner 360 degrees */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
         
+        /* Progress bar container - subtle background with rounded corners */
         .progress-container {
             width: 100%;
             height: 6px;
@@ -111,6 +122,7 @@
             position: relative;
         }
         
+        /* Actual progress bar - animated fill with gradient color and glow */
         .progress-bar {
             height: 100%;
             width: 0%;
@@ -120,6 +132,7 @@
             box-shadow: 0 0 8px rgba(14, 165, 233, 0.4);
         }
         
+        /* Shimmer effect on progress bar - creates moving highlight */
         .progress-bar::after {
             content: '';
             position: absolute;
@@ -136,11 +149,13 @@
             animation: shimmer 1.5s infinite;
         }
         
+        /* Animation for shimmer - moves highlight across the progress bar */
         @keyframes shimmer {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
         
+        /* Countdown text styling - smaller, semi-transparent text with letter spacing */
         .countdown {
             font-size: 0.95rem;
             color: rgba(226, 232, 240, 0.8);
@@ -148,6 +163,7 @@
             letter-spacing: 0.5px;
         }
         
+        /* Manual redirect link - styled as a subtle button with border and background */
         .manual-link {
             display: inline-block;
             margin-top: 1rem;
@@ -163,6 +179,7 @@
             font-weight: 500;
         }
         
+        /* Hover effect for manual link - enhances visibility and adds subtle elevation */
         .manual-link:hover {
             background: rgba(14, 165, 233, 0.15);
             transform: translateY(-2px);
@@ -170,6 +187,7 @@
             border-color: rgba(14, 165, 233, 0.5);
         }
         
+        /* Active state for manual link - removes elevation when clicked */
         .manual-link:active {
             transform: translateY(0);
         }
